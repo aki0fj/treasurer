@@ -1,0 +1,37 @@
+<h1>Listing journals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Occur on</th>
+      <th>Deb acc cd</th>
+      <th>Cre acc cd</th>
+      <th>Amount</th>
+      <th>Description</th>
+      <th>P r</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @journals.each do |journal| %>
+      <tr>
+        <td><%= journal.occur_on %></td>
+        <td><%= journal.deb_acc_cd %></td>
+        <td><%= journal.cre_acc_cd %></td>
+        <td><%= journal.amount %></td>
+        <td><%= journal.description %></td>
+        <td><%= journal.p_r %></td>
+        <td><%= link_to 'Show', journal %></td>
+        <td><%= link_to 'Edit', edit_journal_path(journal) %></td>
+        <td><%= link_to 'Destroy', journal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Journal', new_journal_path %>

@@ -1,0 +1,4 @@
+<%= form.fields_for :journal_credit do |f| %>
+  <%= render :partial => "accounts/acc_cd_cre",
+             :locals => {:form => f, :account => journal_credit.account} %>
+<% end %>

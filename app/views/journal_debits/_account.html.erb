@@ -1,0 +1,23 @@
+<%= fields_for(account) do |acc| %>
+  <div class="nobr">
+    <div class="field">
+      <%= acc.label t(flg) %>
+    </div>
+  </div>
+  <div class="nobr">
+    <div class="field">
+      <%= acc.text_field :acc_cd, id: flg + "_acc_cd" %>
+    </div>
+  </div>
+  <div class="nobr">
+    <div id="<%= flg %>_results" >
+      <% if account.present? %>
+        <% if I18n.locale == 'en' %>
+          <%= account.acc_name_en %>
+        <% else %>
+          <%= account.acc_name_ja %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

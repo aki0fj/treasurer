@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t(:acc_cd) %></strong>
+  <%= @account.acc_cd %>
+</p>
+
+<p>
+  <strong><%= t(:acc_name) + t(:en) %></strong>
+  <%= @account.acc_name_en %>
+</p>
+
+<p>
+  <strong><%= t(:acc_name) + t(:ja) %></strong>
+  <%= @account.acc_name_ja %>
+</p>
+
+<p>
+  <strong><%= t(:type_name) + t(:en) %></strong>
+  <% if @account.account_type %>
+    <%= @account.account_type.type_name_en %>
+  <% end %>
+</p>
+
+<p>
+  <strong><%= t(:type_name) + t(:ja) %></strong>
+  <% if @account.account_type %>
+    <%= @account.account_type.type_name_ja %>
+  <% end %>
+</p>
+
+<p>
+  <strong><%= t(:bs) %></strong>
+  <% if @account.account_type %>
+    <%= @account.account_type.bs %>
+  <% end %>
+</p>
+
+<p>
+  <strong><%= t(:pl) %></strong>
+  <% if @account.account_type %>
+    <%= @account.account_type.pl %>
+  <% end %>
+</p>
+
+<%= link_to t(:edit), edit_account_path(@account) %> |
+<%= link_to t(:back), accounts_path %>

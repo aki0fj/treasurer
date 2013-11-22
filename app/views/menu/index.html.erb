@@ -1,0 +1,22 @@
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#language").change(function(){
+    var lang = $("#language").val();
+    $.get("change_locale?language=" + lang);
+  });
+});
+</script>
+<h1><%= t(:account) + ' ' + t(:system) %> Menu</h1>
+<%= form_tag :controller => :menu, :action => :index do %>
+<%- list = {"日本語" => :ja, "English" => :en} %>
+<%= select_tag :language, 
+    options_from_collection_for_select(list, :last, :first, I18n.locale)
+%>
+<h2><%= t(:daily_operation) %></h2>
+<li><%= link_to t(:journal) + t(:listing), journal_debits_path %></li>
+<h2><%= t(:closing) %></h2>
+<li><%= link_to t(:trial_balance), trial_balance_index_path %></li>
+<li><%= link_to t(:adjusted_trial_balance), trial_balance_index_path %></li>
+<h2><%= t(:master_maintenance) %></h2>
+<li><%= link_to t(:accounts) + t(:listing), accounts_path %></li>
+<% end %>

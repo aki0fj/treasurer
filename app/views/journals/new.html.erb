@@ -1,0 +1,15 @@
+<h1>New journal</h1>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#journal_deb_acc_cd").change(function(){
+    var acc_cd = $("#journal_deb_acc_cd").val();
+    $.get("search_account?acc_cd=" + acc_cd);
+  });
+});
+</script>
+
+<%= render 'form' %>
+<div id="acc_results"></div>
+
+<%= link_to 'Back', journals_path %>

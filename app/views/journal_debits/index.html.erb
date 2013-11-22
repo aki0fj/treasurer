@@ -1,0 +1,41 @@
+<h1><%= t(:journal) + ' ' + t(:listing) %></h1>
+<table>
+  <thead>
+    <tr>
+      <th><%= t :occur %></th>
+      <th><%= t :debit %></th>
+      <th><%= t :credit %></th>
+      <th><%= t :amount %></th>
+      <th><%= t :description %></th>
+      <th><%= t :p_r %></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @journal_debits.each do |journal_debit| %>
+      <tr>
+        <td><%= journal_debit.occur_on %></td>
+        <% if I18n.locale == 'en' %>
+          <td><%= journal_debit.account.acc_name_en %></td>
+          <td><%= journal_debit.journal_credit.account.acc_name_en %></td>
+        <% else %>
+          <td><%= journal_debit.account.acc_name_ja %></td>
+          <td><%= journal_debit.journal_credit.account.acc_name_ja %></td>
+        <% end %>
+        <td><%= journal_debit.amount %></td>
+        <td><%= journal_debit.description %></td>
+        <td><%= journal_debit.p_r %></td>
+        <td><%= link_to t(:show), journal_debit %></td>
+        <td><%= link_to t(:edit), edit_journal_debit_path(journal_debit) %></td>
+        <td><%= link_to t(:destroy), journal_debit, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t(:new), new_journal_debit_path %>

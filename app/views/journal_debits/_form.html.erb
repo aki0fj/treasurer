@@ -1,0 +1,62 @@
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#debit_acc_cd").change(function(){
+    var acc_cd = $("#debit_acc_cd").val();
+    $.get("search_account?acc_cd=" + acc_cd + "&res_id=debit");
+  });
+  $("#credit_acc_cd").change(function(){
+    var acc_cd = $("#credit_acc_cd").val();
+    $.get("search_account?acc_cd=" + acc_cd + "&res_id=credit");
+  });
+});
+</script>
+
+<%= form_for(@journal_debit) do |f| %>
+  <% if @journal_debit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@journal_debit.errors.count, "error") %> prohibited this journal_debit from being saved:</h2>
+
+      <ul>
+      <% @journal_debit.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :occur_on, t(:occur) %>
+    <%= f.date_select :occur_on %>
+  </div>
+  <%= render :partial => "account" ,
+    :locals => {:flg => "debit", 
+        :account => @journal_debit.account} %>
+  <div class="field">
+    <%= f.label :account_id %>
+    <%= f.number_field :account_id %>
+  </div>
+  <%= fields_for(@journal_debit.journal_credit) do |cre| %>
+    <%= render :partial => "account" ,
+      :locals => {:flg => "credit", 
+          :account => @journal_debit.journal_credit.account} %>
+    <div class="field">
+      <%= cre.label :account_id %>
+      <%= cre.number_field :account_id %>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label t(:amount) %>
+    <%= f.text_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label t(:description) %>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label t(:p_r) %>
+    <%= f.number_field :p_r %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

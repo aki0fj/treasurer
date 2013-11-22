@@ -1,0 +1,24 @@
+app/views/accounts/index.html.erb:      <th><%= t(:bs_type_name) + t(:en)  %></th>
+app/views/accounts/index.html.erb:      <th><%= t(:bs_type_name) + t(:ja)  %></th>
+app/views/accounts/index.html.erb:          <td><%= account.account_type.bs_type_name_en %></td>
+app/views/accounts/index.html.erb:          <td><%= account.account_type.bs_type_name_ja %></td>
+app/views/accounts/show.html.erb:  <strong><%= t(:bs_type_name) + t(:en) %></strong>
+app/views/accounts/show.html.erb:    <%= @account.account_type.bs_type_name_en %>
+app/views/accounts/show.html.erb:  <strong><%= t(:bs_type_name) + t(:ja) %></strong>
+app/views/accounts/show.html.erb:    <%= @account.account_type.bs_type_name_ja %>
+app/views/accounts/_form.html.erb:    <%= f.label :acc_type, t(:bs_type_name) %><br>
+app/views/accounts/_form.html.erb:        :id, :bs_type_name_en, :include_blank => true %>
+app/views/accounts/_form.html.erb:        :id, :bs_type_name_ja, :include_blank => true %>
+config/locales/ja.yml:  bs_type_name: 'B/S種別'
+db/seeds.rb:AccountType.create(:id => 1, :bs_type_cd => "1", :bs_type_name_en => "Current assets", :bs_type_name_ja => "流動資産", :account_mode => "1")
+db/seeds.rb:AccountType.create(:id => 2, :bs_type_cd => "2", :bs_type_name_en => "Fixed assets", :bs_type_name_ja => "有形固定資産", :account_mode => "1")
+db/seeds.rb:AccountType.create(:id => 3, :bs_type_cd => "3", :bs_type_name_en => "Fixed assets", :bs_type_name_ja => "無形固定資産", :account_mode => "1")
+db/seeds.rb:AccountType.create(:id => 4, :bs_type_cd => "4", :bs_type_name_en => "Current liabilities", :bs_type_name_ja => "流動負債", :account_mode => "2")
+db/seeds.rb:AccountType.create(:id => 5, :bs_type_cd => "5", :bs_type_name_en => "Fixed liabilities", :bs_type_name_ja => "固定負債", :account_mode => "2")
+db/seeds.rb:AccountType.create(:id => 6, :bs_type_cd => "6", :bs_type_name_en => "net assets", :bs_type_name_ja => "純資産", :account_mode => "2")
+db/migrate/20130808094218_create_account_types.rb:      t.string  :bs_type_cd
+db/migrate/20130808094218_create_account_types.rb:      t.string  :bs_type_name_en
+db/migrate/20130808094218_create_account_types.rb:      t.string  :bs_type_name_ja
+db/schema.rb:    t.string   "bs_type_cd"
+db/schema.rb:    t.string   "bs_type_name_en"
+db/schema.rb:    t.string   "bs_type_name_ja"

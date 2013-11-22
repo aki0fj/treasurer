@@ -1,0 +1,39 @@
+<%= form_for(@account) do |f| %>
+  <% if @account.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@account.errors.count, "error") %> prohibited this account from being saved:</h2>
+
+      <ul>
+      <% @account.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :acc_cd, t(:acc_cd) %><br>
+    <%= f.text_field :acc_cd %>
+  </div>
+  <div class="field">
+    <%= f.label :acc_name_en, t(:acc_name) + t(:en) %><br>
+    <%= f.text_field :acc_name_en %>
+  </div>
+  <div class="field">
+    <%= f.label :acc_name_ja, t(:acc_name) + t(:ja) %><br>
+    <%= f.text_field :acc_name_ja %>
+  </div>
+  <div class="field">
+    <%= f.label :acc_type, t(:type_name) %><br>
+    <% if I18n.locale == :en %>
+      <%= f.collection_select :account_type_id, AccountType.all, 
+        :id, :type_name_en, :include_blank => true %>
+    <% else %>
+      <%= f.collection_select :account_type_id, AccountType.all, 
+        :id, :type_name_ja, :include_blank => true %>
+    <% end %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,46 @@
+<h1><%= t(:account) + ' ' + t(:listing) %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t(:acc_cd) %></th>
+      <th><%= t(:acc_name) + t(:en) %></th>
+      <th><%= t(:acc_name) + t(:ja) %></th>
+      <th><%= t(:type_name) + t(:en)  %></th>
+      <th><%= t(:type_name) + t(:ja)  %></th>
+      <th><%= t(:bs) %></th>
+      <th><%= t(:pl) %></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @accounts.each do |account| %>
+      <tr>
+        <td><%= account.acc_cd %></td>
+        <td><%= account.acc_name_en %></td>
+        <td><%= account.acc_name_ja %></td>
+        <% if account.account_type %>
+          <td><%= account.account_type.type_name_en %></td>
+          <td><%= account.account_type.type_name_ja %></td>
+          <td><%= account.account_type.bs %></td>
+          <td><%= account.account_type.pl %></td>
+        <% else %>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        <% end %>
+        <td><%= link_to t(:show), account %></td>
+        <td><%= link_to t(:edit), edit_account_path(account) %></td>
+        <td><%= link_to t(:destroy), account, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t(:new), new_account_path %>

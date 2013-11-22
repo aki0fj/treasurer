@@ -1,0 +1,19 @@
+<%= form.fields_for :account do |f| %>
+  <div class="field">
+    <%= f.label :acc_cd, t(:debit) %>
+    <% if acc.present? %>
+      <%= f.text_field :acc_cd, value: acc.acc_cd %>
+    <% else %>
+      <%= f.text_field :acc_cd %>
+    <% end %>
+    <div id="deb_results">
+      <% if acc.present? %>
+        <% if I18n.locale == 'en' %>
+          <%= acc.acc_name_en %>
+        <% else %>
+          <%= acc.acc_name_ja %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

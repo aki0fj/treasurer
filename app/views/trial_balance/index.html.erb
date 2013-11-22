@@ -1,0 +1,42 @@
+<h1>TrialBalance#index</h1>
+
+<%= form_tag(url_for(:action => 'index'), :id => 'trial_balance') do %>
+  <%= date_field_tag(:beg_date) %>
+  <%= date_field_tag(:end_date) %>
+  <%= submit_tag "Show!" %>
+<% end %>  
+<table>
+  <thead>
+    <tr>
+      <th><%= t(:debit) + t(:balance) %></th>
+      <th><%= t(:debit) + t(:total) %></th>
+      <th><%= t :acc_cd %></th>
+      <th><%= t :acc_name %></th>
+      <th><%= t(:credit) + t(:total) %></th>
+      <th><%= t(:credit) + t(:balance) %></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trial_balances.records.each do |tb| %>
+      <tr>
+        <th><%= tb[:deb_bal] %></th>
+        <th><%= tb[:deb_ttl] %></th>
+        <th><%= tb[:account][:acc_cd] %></th>
+        <% if I18n.locale == 'en' %>
+          <th><%= tb[:account][:acc_name_en] %></th>
+        <% else %>
+          <th><%= tb[:account][:acc_name_ja] %></th>
+        <% end %>
+        <th><%= tb[:cre_ttl] %></th>
+        <th><%= tb[:cre_bal] %></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

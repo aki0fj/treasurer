@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Occur on:</strong>
+  <%= @journal.occur_on %>
+</p>
+
+<p>
+  <strong>Deb acc cd:</strong>
+  <%= @journal.deb_acc_cd %>
+</p>
+
+<p>
+  <strong>Cre acc cd:</strong>
+  <%= @journal.cre_acc_cd %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @journal.amount %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @journal.description %>
+</p>
+
+<p>
+  <strong>P r:</strong>
+  <%= @journal.p_r %>
+</p>
+
+<%= link_to 'Edit', edit_journal_path(@journal) %> |
+<%= link_to 'Back', journals_path %>

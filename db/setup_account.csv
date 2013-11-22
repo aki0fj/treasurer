@@ -1,0 +1,51 @@
+"001","Sales","売上",7
+"002","Beginning products inventory","期首製品棚卸高",9
+"003","Pucheses","仕入（商品）",9
+"005","Ending products inventory","期末製品棚卸高",7
+"008","Taxes and dues","租税公課",9
+"010","Utilities costs","水道高熱費",9
+"011","Travel expenses","旅費交通費",9
+"012","Communication expenses","通信費",9
+"014","Entertainment expenses","接待交際費",9
+"017","Supplies expenses","消耗品費",9
+"018","Depriciation costs","減価償却費",9 
+"019","Welfare costs","福利厚生費",9 
+"101","Cash","現金",1
+"102","Deposit","預金",1
+"105","Bill receivable","受取手形",1
+"106","Account receivable","売掛金",1
+"110","Short-term loan","短期貸付金",1
+"119","Goods","商品",1
+"120","Products","製品",1
+"121","Work in process","仕掛品",1
+"122","Stored goods","貯蔵品",1
+"123","Advance payment","前渡金",1
+"124","Prepaid expense","前払費用",1
+"125","Temporary payment","仮払金",1
+"150","Building","建物・構築物",2
+"151","Equipment","機械・装置",2
+"155","Fixture","工具・備品",2
+"156","Land","土地",2
+"170","Software","ソフトウェア",3
+"171","Goodwill","のれん",3
+"172","Patent","特許権",3
+"180","Securities","有価証券",3
+"189","Deferred asset","繰延資産",3
+"190","Opening expenses","開業費",3
+"201","Bill payable","支払手形",4
+"202","Account payable","買掛金",4
+"203","Short-term liabilities","短期借入金",4
+"220","Bond","社債",5
+"221","Long-term liabilities","長期借入金",5
+"300","Stock","資本金",6
+"301","Catital surplus","資本剰余金",6
+"310","Erned surplus","利益剰余金",6
+
+"401","Beginning work-in-process inventory","期首仕掛品棚卸高",8 
+"404","Ending work-in-process inventory","期末仕掛品棚卸高",7 
+"405","Raw material costs","原材料費",8 
+"406","Labor costs","労務費",8
+"407","Outsourcing process costs","外注加工費",8 
+"408","Electric power costs","電力費",8
+"409","Utilities costs","水道高熱費",8
+"411","Depriciation costs","減価償却費",8 

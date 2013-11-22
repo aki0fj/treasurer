@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t :occur %></strong>
+  <%= @journal_debit.occur_on %>
+</p>
+
+<p>
+  <strong><%= t :debit %></strong>
+  <% if I18n.locale == 'en' %>
+    <%= @journal_debit.account.acc_name_en %>
+  <% else %>
+    <%= @journal_debit.account.acc_name_ja %>
+  <% end %>
+</p>
+
+<p>
+  <strong><%= t :credit %></strong>
+  <% if I18n.locale == 'en' %>
+    <%= @journal_debit.journal_credit.account.acc_name_en %>
+  <% else %>
+    <%= @journal_debit.journal_credit.account.acc_name_ja %>
+  <% end %>
+</p>
+
+<p>
+  <strong><%= t :amount %></strong>
+  <%= @journal_debit.amount %>
+</p>
+
+<p>
+  <strong><%= t :description %></strong>
+  <%= @journal_debit.description %>
+</p>
+
+<p>
+  <strong><%= t :p_r %></strong>
+  <%= @journal_debit.p_r %>
+</p>
+
+<%= link_to t(:edit), edit_journal_debit_path(@journal_debit) %> |
+<%= link_to t(:back), journal_debits_path %>
