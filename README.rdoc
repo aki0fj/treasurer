@@ -1,13 +1,30 @@
-== README
+== Railsで動く会計システム
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 現在できること
 
-Things you may want to cover:
+* 勘定科目コードのメンテ（CSV入力によるセットアップも可能)
 
-* Ruby version
+* 取引仕訳入力
+
+* 決算試算表作成
+
+# 今後の開発予定
+
+* 決算修正入力
+
+* 損益計算書作成
+
+* 貸借対照表作成
+
+# システム情報
+
+* Ruby version 2.0.0
 
 * System dependencies
+  
+    * Rails 4.0.0
+    * sqlite3
+    * etc... (see Gemfile.lock)
 
 * Configuration
 
