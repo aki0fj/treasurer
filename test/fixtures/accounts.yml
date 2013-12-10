@@ -1,5 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
+account1:
+  acc_cd: 001
+  acc_name_en: MyString1
+  acc_name_ja: MyString
+
 one:
   acc_cd: MyString1
   acc_name_en: MyString1
@@ -9,3 +14,4 @@ two:
   acc_cd: MyString2
   acc_name_en: MyString2
   acc_name_ja: MyString
+

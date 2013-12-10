@@ -4,7 +4,8 @@ class AccountsController < ApplicationController
   # GET /accounts
   # GET /accounts.json
   def index
-    @accounts = Account.find(:all, :order => :acc_cd)
+#    @accounts = Account.find(:all, :order => :acc_cd)
+    @accounts = Account.all(:order => :acc_cd)
   end
 
   # GET /accounts/1

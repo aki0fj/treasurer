@@ -4,7 +4,14 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+one: 
+  type_cd: one
+  type_name_en: one_name_en
+  type_name_ja: one_name_ja
+  account_mode: one_acc_mode
+  bs: true
+  pl: true
+
 # column: value
 #
 two: {}
