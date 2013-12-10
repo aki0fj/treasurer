@@ -1,12 +1,15 @@
-<%= fields_for(account) do |acc| %>
   <div class="nobr">
     <div class="field">
-      <%= acc.label t(flg) %>
+      <%= label :account, :acc_cd, t(flg) %>
     </div>
   </div>
   <div class="nobr">
     <div class="field">
-      <%= acc.text_field :acc_cd, id: flg + "_acc_cd" %>
+      <% if account.present? %>
+        <%= text_field :account, :acc_cd, id: flg + "_acc_cd" , :value => account.acc_cd %>
+      <% else %>
+        <%= text_field :account, :acc_cd, id: flg + "_acc_cd" %>
+      <% end %>
     </div>
   </div>
   <div class="nobr">
@@ -20,4 +23,3 @@
       <% end %>
     </div>
   </div>
-<% end %>

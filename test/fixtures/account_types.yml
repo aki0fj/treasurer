@@ -16,3 +16,10 @@ one:
 #
 two: {}
 #  column: value
+for_account:
+  type_cd: 1
+  type_name_en: en 
+  type_name_ja: ja
+  bs: true
+  pl: true
+  account_mode: 1

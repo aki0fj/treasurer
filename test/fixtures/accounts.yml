@@ -9,9 +9,16 @@ one:
   acc_cd: MyString1
   acc_name_en: MyString1
   acc_name_ja: MyString
+  account_type: for_account
 
 two:
   acc_cd: MyString2
   acc_name_en: MyString2
   acc_name_ja: MyString
+
+for_jd:
+  acc_cd: MyString3
+  acc_name_en: MyString1
+  acc_name_ja: MyString
+  account_type: for_account
 

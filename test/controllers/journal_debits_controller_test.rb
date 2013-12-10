@@ -2,8 +2,7 @@ require 'test_helper'
 
 class JournalDebitsControllerTest < ActionController::TestCase
   setup do
-    @accounts = accounts(:one)
-    @journal_credit = journal_credits(:one)
+    @account = accounts(:one)
     @journal_debit = journal_debits(:one)
   end
 
@@ -20,16 +19,17 @@ class JournalDebitsControllerTest < ActionController::TestCase
 
   test "should create journal_debit" do
     assert_difference('JournalDebit.count') do
-      post :create, { 
+      post :create, 
         journal_debit: {
-          occur_on: @journal_debit.occur_on, 
-          account_id: @accounts.id,
-          amount: @journal_debit.amount
+          occur_on: @journal_debit.occur_on,
+          account_id: @journal_debit.account.id,
+          amount: @journal_debit.amount,
+          description: @journal_debit.description,
+          p_r: @journal_debit.p_r
         } ,
         journal_credit: {
-          account_id: @accounts.id
+          account_id: @journal_debit.journal_credit.account.id
         }
-      }
     end
 
     assert_redirected_to journal_debit_path(assigns(:journal_debit))
@@ -47,17 +47,17 @@ class JournalDebitsControllerTest < ActionController::TestCase
   end
 
   test "should update journal_debit" do
-    patch :update, {
-      id: @journal_debit, 
+    patch :update, id: @journal_debit, 
       journal_debit: {
-        occur_on: @journal_debit.occur_on, 
-        account_id: @accounts.id,
-        amount: @journal_debit.amount
+        occur_on: @journal_debit.occur_on,
+        account: @journal_debit.account,
+        amount: @journal_debit.amount,
+        description: @journal_debit.description,
+        p_r: @journal_debit.p_r
       } ,
       journal_credit: {
-        account_id: @accounts.id
+        account: @journal_debit.journal_credit.account
       }
-    }
     assert_redirected_to journal_debit_path(assigns(:journal_debit))
   end
 
