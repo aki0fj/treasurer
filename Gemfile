@@ -43,3 +43,6 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'compass-rails', '~> 1.1.2'
+gem 'chosen-rails'

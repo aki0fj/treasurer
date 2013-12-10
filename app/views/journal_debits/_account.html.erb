@@ -23,3 +23,10 @@
       <% end %>
     </div>
   </div>
+  <div>
+    <%= select_tag :account,
+      options_for_select(
+        Account.all.map {|a| ["#{a.acc_name_ja} #{a.acc_name_en}", a.id]}),
+      class: "chosen-select"
+    %>
+  </div>
