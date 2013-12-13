@@ -46,3 +46,10 @@ end
 
 gem 'compass-rails', '~> 1.1.2'
 gem 'chosen-rails'
+
+group :development , :test do
+  gem 'rspec-rails','~> 2.0'
+end
+group :test do
+  gem 'capybara'
+end

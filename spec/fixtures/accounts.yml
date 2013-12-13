@@ -1,0 +1,16 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 1
+  acc_cd: 1
+  acc_name_en: en
+  acc_name_ja: ja
+  account_type_id: 1
+
+two:
+  id: 2
+  acc_cd: 2
+  acc_name_en: en
+  acc_name_ja: ja
+  account_type_id: 1
+
